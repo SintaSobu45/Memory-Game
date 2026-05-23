@@ -1,0 +1,298 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+/* ===== BODY / HOME ===== */
+.home {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #0f172a, #1e1b4b, #111827);
+  background-size: 300% 300%;
+  animation: bgFlow 10s ease infinite;
+
+  color: white;
+
+  padding: clamp(12px, 3vw, 20px);
+  box-sizing: border-box;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* ===== FLOATING GLOW ORBS ===== */
+.home::before,
+.home::after {
+  content: "";
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  filter: blur(70px);
+  z-index: 0;
+  animation: floatGlow 8s ease-in-out infinite;
+}
+
+.home::before {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.45), transparent 70%);
+}
+
+.home::after {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.4), transparent 70%);
+}
+
+/* ===== TITLE ===== */
+.home h1 {
+  font-size: clamp(26px, 5vw, 42px);
+  margin-bottom: 6px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ===== STEP TEXT ===== */
+.stepText {
+  margin-bottom: 10px;
+  font-size: clamp(13px, 2.5vw, 16px);
+  opacity: 0.85;
+  text-align: center;
+  z-index: 1;
+}
+
+/* ===== STEPS DOTS ===== */
+.steps {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+  justify-content: center;
+  z-index: 1;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #334155;
+  transition: all 0.3s;
+}
+
+.activeDot {
+  background: #7c3aed;
+  box-shadow: 0 0 10px #7c3aed;
+}
+
+/* ===== CARD BOX ===== */
+.cardBox {
+  width: 320px;
+  max-width: 92%;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+
+  border-radius: 18px;
+  padding: clamp(14px, 3vw, 24px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  box-shadow:
+    0 0 20px rgba(124, 58, 237, 0.25),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+
+  animation: floatCard 4s ease-in-out infinite;
+
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== INPUTS ===== */
+.cardBox input,
+.cardBox select {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-top: 6px;
+  width: 100%;
+  box-sizing: border-box;
+
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+
+  transition: all 0.3s;
+}
+
+/* focus glow */
+.cardBox input:focus,
+.cardBox select:focus,
+.timerSelect:focus {
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.8);
+  border: 1px solid #7c3aed;
+}
+
+/* ===== BUTTONS ===== */
+.cardBox button {
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+
+  background: linear-gradient(135deg, #334155, #1e293b);
+  color: white;
+
+  transition: all 0.3s ease;
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* hover FIX (now visible color change) */
+.cardBox button:hover {
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  transform: scale(1.06);
+  box-shadow:
+    0 0 15px rgba(124, 58, 237, 0.8),
+    0 0 25px rgba(236, 72, 153, 0.5);
+}
+
+/* click effect */
+.cardBox button:active {
+  transform: scale(0.97);
+}
+
+/* ===== BACK / NEXT ===== */
+.stepButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.stepButtons button {
+  width: 100%;
+}
+
+.nextBtn {
+  background: #2563eb !important;
+}
+
+.backBtn {
+  background: #6b7280 !important;
+}
+
+/* ===== ACTIVE MODE ===== */
+.activeMode {
+  background: #7c3aed !important;
+}
+
+/* ===== TOGGLE ===== */
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* ===== TIMER SELECT ===== */
+.timerSelect {
+  margin-top: 8px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #334155;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.timerSelect:hover {
+  background: #7c3aed;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes bgFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes floatCard {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes floatGlow {
+
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(20px, 20px) scale(1.1);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .cardBox {
+    width: 88%;
+  }
+}
+
+@media (max-width: 500px) {
+  .cardBox {
+    width: 94%;
+    padding: 16px;
+  }
+
+  .home h1 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .home h1 {
+    font-size: 24px;
+  }
+
+  .cardBox {
+    padding: 14px;
+  }
+}
