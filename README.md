@@ -1,16 +1,37 @@
-# React + Vite
+# 🎮 Memory Battle Game (React.js)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fun **multiplayer Memory Card Game built using React.js + Vite**
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🧠 About the Project
+This is a responsive memory matching game where players flip cards and try to find matching pairs.  
+It supports **single-player and two-player modes**, scoring, timer, and dark mode.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Tech Stack
+- ⚛️ React.js (Frontend library)
+- ⚡ Vite (Fast build tool)
+- 🎨 CSS3 (Custom styling)
+- 🎮 JavaScript (Game logic)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+- 👥 1 Player & 2 Player mode
+- 🧠 Memory-based gameplay
+- 🔢 Score tracking system
+- ⏱ Timer mode (optional)
+- 🌙 Dark / Light mode toggle
+- 🔊 Sound effects (flip, match, win)
+- 📱 Fully responsive design
+- 🎨 Player-based match highlighting
+
+---
+
+## 🎯 How to Run Locally
+
+```bash
+npm install
+npm run dev
